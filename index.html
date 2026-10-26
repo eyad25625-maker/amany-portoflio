@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Portfolio of Amany Ibrahim Khalifa, art teacher and art supervisor: school event installations, decorations and art programmes.">
+<title>Amany's Art</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@300;400;600&display=swap">
+<style>
+:root{
+  /* Layout: full-bleed photo hero, then alternating teal and white bands, one piece per band, text narrow, photo wide. */
+  --bg:#ffffff; --fg:#161b1c; --muted:#4b5658; --band:#a3d5d6; --band-fg:#10191a; --rule:#d7e3e3; --bar:#a3d5d6;
+  --head-bg:#ffffff; --head-fg:#161b1c; --brand:#6bb3b5; --tint:rgba(20,18,50,.52);
+  --display:"Roboto",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --body:"Open Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0d1516; --fg:#e8f1f1; --muted:#a7b8b9; --band:#17383b; --band-fg:#e8f1f1; --rule:#243a3c; --bar:#a3d5d6;
+  --head-bg:#0d1516; --head-fg:#e8f1f1; --brand:#8fcfd1; --tint:rgba(10,12,30,.55); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0d1516; --fg:#e8f1f1; --muted:#a7b8b9; --band:#17383b; --band-fg:#e8f1f1; --rule:#243a3c; --bar:#a3d5d6;
+  --head-bg:#0d1516; --head-fg:#e8f1f1; --brand:#8fcfd1; --tint:rgba(10,12,30,.55); color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-weight:300;font-size:17px;line-height:1.7;margin:0}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+.wrap{max-width:1120px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+/* header */
+.site-head{position:fixed;inset:0 0 auto 0;z-index:20;color:#fff;transition:background .2s,color .2s;
+  padding-top:env(safe-area-inset-top,0px)}
+.site-head.solid{background:var(--head-bg);color:var(--head-fg);box-shadow:0 1px 0 var(--rule)}
+.head-in{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px;
+  padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+.brand{font-family:var(--display);font-weight:500;font-size:21px;letter-spacing:.12em;text-decoration:none;color:inherit;white-space:nowrap}
+.site-head.solid .brand{color:var(--brand)}
+.nav{display:flex;gap:6px 22px;flex-wrap:wrap;justify-content:flex-end;font-size:15.5px;font-weight:400}
+.nav a{text-decoration:none;padding:4px 0;border-bottom:2px solid transparent;opacity:.9}
+.nav a:hover{opacity:1}
+.nav a.on{font-weight:700;opacity:1;border-bottom-color:currentColor}
+.menu-btn{display:none;background:none;border:0;color:inherit;font:inherit;padding:8px;cursor:pointer}
+.menu-btn span{display:block;width:24px;height:2px;background:currentColor;margin:5px 0}
+a:focus-visible,button:focus-visible{outline:3px solid #f4b400;outline-offset:3px}
+
+/* hero */
+.hero{position:relative;background:linear-gradient(var(--tint),var(--tint)),var(--hero) center/cover no-repeat;color:#fff;
+  padding:132px 16px 76px;text-align:center}
+.hero-in{max-width:900px;margin-inline:auto}
+.hero h1{font-family:var(--display);font-weight:700;font-size:clamp(38px,6.2vw,64px);line-height:1.1;margin:0;text-wrap:balance;text-shadow:0 2px 18px rgba(0,0,0,.35)}
+.bar{display:block;width:140px;height:9px;background:var(--bar);margin:26px auto 22px}
+.sub{font-size:clamp(24px,3.6vw,40px);font-weight:300;margin:0;line-height:1.2;text-shadow:0 2px 14px rgba(0,0,0,.35)}
+.hero:not(.hero-home){padding-bottom:64px}
+.hero:not(.hero-home) .sub{font-size:clamp(18px,2.4vw,24px)}
+
+/* bands */
+.band{background:var(--band);color:var(--band-fg)}
+.plain{background:var(--bg);color:var(--fg)}
+.piece{padding-block:44px}
+h2{font-family:var(--display);font-weight:700;font-size:28px;line-height:1.2;margin:0 0 20px;text-wrap:balance}
+h3{font-family:var(--display);font-weight:700;font-size:22px;line-height:1.2;margin:0 0 14px}
+p{margin:0 0 14px}
+.grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.3fr);gap:56px;align-items:center}
+.grid.flip{grid-template-columns:minmax(0,2.3fr) minmax(0,1fr)}
+.grid.flip .txt{order:2}
+.grid figure,.about figure{margin:0;min-width:0}
+.grid figure img{margin-inline:auto;max-height:82vh;width:auto;max-width:100%;object-fit:contain}
+.txt{min-width:0}
+.txt p{font-size:18px}
+
+/* home */
+.about{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.45fr);gap:56px;align-items:center;padding-block:56px}
+.portrait img{width:100%;height:auto}
+.about h2{margin-top:36px}
+.info{border-top:1px solid var(--rule)}
+.cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:44px;padding-block:52px}
+.cols p{margin:0 0 3px;font-size:16px}
+.cols .d{margin-top:18px;color:var(--muted);font-size:15px}
+.cols .d:first-of-type{margin-top:0}
+.cols .r{font-weight:600}
+.cols ul{margin:0;padding:0;list-style:none}
+.cols li{font-size:16px;padding:2px 0}
+.cols .sp{margin-top:30px}
+.statement{padding-block:56px}
+.invite .wrap{padding-block:56px;text-align:center}
+.invite p{font-weight:600;font-size:20px;max-width:640px;margin:0 auto;text-wrap:balance}
+
+/* footer */
+.foot{border-top:1px solid var(--rule);background:var(--bg);color:var(--fg)}
+.foot .wrap{display:flex;flex-wrap:wrap;gap:8px 56px;justify-content:space-between;padding-block:28px;font-size:14.5px;font-weight:400;line-height:1.5}
+.foot b{font-weight:600}
+
+.page{display:block}
+.js .page{display:none}
+.js .page.active{display:block}
+
+@media (max-width:860px){
+  .grid,.grid.flip,.about{grid-template-columns:minmax(0,1fr);gap:24px}
+  .grid.flip .txt{order:0}
+  .cols{grid-template-columns:minmax(0,1fr);gap:32px}
+  .about h2{margin-top:0}
+  .portrait img{max-width:380px}
+  .piece{padding-block:32px}
+  .menu-btn{display:block}
+  .nav{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:0;
+    background:var(--head-bg);color:var(--head-fg);padding:8px max(24px,env(safe-area-inset-left,0px)) 14px;box-shadow:0 8px 18px rgba(0,0,0,.18)}
+  .nav.open{display:flex}
+  .nav a{padding:11px 0;border-bottom:1px solid var(--rule)}
+  .hero{padding-top:112px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="site-head" id="head"><div class="head-in">
+  <a class="brand" href="#home" data-go="home">Amany&rsquo;s Art</a>
+  <button class="menu-btn" id="menu" aria-label="Menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+  <nav class="nav" id="nav"><a href="#home" data-go="home">Home</a><a href="#national" data-go="national">National Occasions</a><a href="#ramadan" data-go="ramadan">Ramadan</a><a href="#backtoschool" data-go="backtoschool">Back to School</a><a href="#childrensday" data-go="childrensday">Children&rsquo;s Day</a><a href="#christmas" data-go="christmas">Christmas &amp; New Year</a></nav>
+</div></div>
+
+<main class="page" id="p-home" data-page="home"><header class="hero hero-home" style="--hero:url('img/village.jpg')">
+  <div class="hero-in"><h1>Amany Ibrahim Khalifa</h1><span class="bar"></span><p class="sub">Portfolio</p></div>
+</header>
+<section class="plain"><div class="wrap about">
+  <figure class="portrait"><img src="img/amany.jpg" width="607" height="805" alt="Amany Ibrahim Khalifa" class=""></figure>
+  <div class="txt">
+    <h2>About Me:</h2>
+    <p>I am an art teacher and art supervisor at Modern Narmer Language School in Giza, where I have worked since 2001. I teach art to every grade, and for the last five years I have supervised the art programme.</p>
+    <p>My work combines curriculum development, assessment and age-appropriate activities with hands-on painting, paper, foam and fabric construction. I also plan, design and build the school&rsquo;s event installations, from national commemorations to Ramadan, Back to School, Children&rsquo;s Day, Christmas and New Year.</p>
+  </div>
+</div></section>
+
+<section class="plain info"><div class="wrap cols">
+  <div><h3>Experience</h3>
+    <p class="d">2021 &ndash; Now</p><p class="r">Art Supervisor</p><p>Modern Narmer Language School</p>
+    <p class="d">2001 &ndash; Now</p><p class="r">Art Teacher, All Grades</p><p>Modern Narmer Language School</p>
+    <p class="d">2001 &ndash; Now</p><p class="r">Events Planning &amp; Decoration</p><p>Mother&rsquo;s Day, Back to School, Ramadan, Christmas, Children&rsquo;s Day, yearly art exhibition, theatre decorations</p>
+  </div>
+  <div><h3>Skills</h3>
+    <ul><li>Curriculum development</li><li>Assessment</li><li>Early childhood learning concepts</li><li>Age-appropriate activities</li><li>Art history concepts</li><li>Visual imaging</li><li>Leadership and time management</li><li>Creative thinking and problem solving</li></ul>
+  </div>
+  <div><h3>Techniques</h3>
+    <ul><li>Water colour and pastel</li><li>Gouache</li><li>Acrylic and oil colours</li><li>Painting on wood and leather</li><li>Decoupage</li></ul>
+    <h3 class="sp">Education</h3><p class="r">Faculty of Specific Education</p><p>Grade: Very Good</p>
+    <h3 class="sp">Languages</h3><p>Arabic, English</p>
+  </div>
+</div></section>
+
+<section class="band"><div class="wrap grid statement">
+  <div class="txt"><h2>Statement</h2>
+    <p>This portfolio documents the installations I design and build for the school&rsquo;s annual events. Each piece is hand-painted or hand-cut from foam, fabric, foil and paper, and made at a scale students and families can step into.</p></div>
+  <figure><img src="img/clock.jpg" width="1050" height="1400" alt="New Year 2024 countdown facade" class="" loading="lazy"></figure>
+</div></section>
+
+<section class="plain invite"><div class="wrap"><p>Browse the installations by occasion using the menu above.</p></div></section>
+</main><main class="page" id="p-national" data-page="national"><header class="hero" style="--hero:url('img/oct6.jpg')">
+  <div class="hero-in"><h1>National Occasions</h1><span class="bar"></span><p class="sub">3 installations</p></div>
+</header><section class="piece band"><div class="wrap grid">
+  <div class="txt"><h2>6 October</h2><p>Draped fabric in the Egyptian flag colours, 3D gold mirror-finish lettering, cut-paper doves and the national emblem.</p></div>
+  <figure><img src="img/oct6.jpg" width="867" height="1156" alt="6 October" class="" loading="lazy"></figure>
+</div></section><section class="piece plain"><div class="wrap grid flip">
+  <div class="txt"><h2>National Tribute Board</h2><p>Layered black and white cut paper on a gold foil disc, a flag-coloured ribbon and gold Arabic calligraphy.</p></div>
+  <figure><img src="img/soldier.jpg" width="1050" height="1400" alt="National Tribute Board" class="" loading="lazy"></figure>
+</div></section><section class="piece band"><div class="wrap grid">
+  <div class="txt"><h2>Tribute Board and School Emblem</h2><p>The tribute board installed beside the Modern Narmer Language School emblem, shown from the side to read its relief depth.</p></div>
+  <figure><img src="img/logo.jpg" width="960" height="1280" alt="Tribute Board and School Emblem" class="" loading="lazy"></figure>
+</div></section></main><main class="page" id="p-ramadan" data-page="ramadan"><header class="hero" style="--hero:url('img/ramkareem.jpg')">
+  <div class="hero-in"><h1>Ramadan</h1><span class="bar"></span><p class="sub">3 installations</p></div>
+</header><section class="piece band"><div class="wrap grid">
+  <div class="txt"><h2>Ramadan Kareem</h2><p>Royal-blue fabric, a gold geometric lattice frame, a white cut-out mosque skyline and a crescent.</p></div>
+  <figure><img src="img/ramkareem.jpg" width="1113" height="1400" alt="Ramadan Kareem" class="" loading="lazy"></figure>
+</div></section><section class="piece plain"><div class="wrap grid flip">
+  <div class="txt"><h2>Green and Gold Display</h2><p>Gold mirror-finish calligraphy on an arched panel, a geometric lattice strip and paper lanterns on green fabric.</p></div>
+  <figure><img src="img/ramgreen.jpg" width="933" height="1400" alt="Green and Gold Display" class="" loading="lazy"></figure>
+</div></section><section class="piece band"><div class="wrap grid">
+  <div class="txt"><h2>Blue Textured Arch</h2><p>Hand-textured blue panels with calligraphic relief, framing gold relief lettering and a crescent on a white inset.</p></div>
+  <figure><img src="img/ramblue.jpg" width="1050" height="1400" alt="Blue Textured Arch" class="" loading="lazy"></figure>
+</div></section></main><main class="page" id="p-backtoschool" data-page="backtoschool"><header class="hero" style="--hero:url('img/letsgo.jpg')">
+  <div class="hero-in"><h1>Back to School</h1><span class="bar"></span><p class="sub">5 installations</p></div>
+</header><section class="piece band"><div class="wrap grid">
+  <div class="txt"><h2>Back to School 2026</h2><p>Hand-painted space-themed photo frame with a rocket, planets, a UFO, an astronaut figure and dimensional lettering.</p></div>
+  <figure><img src="img/bts2026.jpg" width="1054" height="1400" alt="Back to School 2026" class="" loading="lazy"></figure>
+</div></section><section class="piece plain"><div class="wrap grid flip">
+  <div class="txt"><h2>Back to School 2025</h2><p>Photo frame with gold mirror-finish script, multicolour numerals and hand-painted school and music characters.</p></div>
+  <figure><img src="img/bts2025.jpg" width="867" height="1156" alt="Back to School 2025" class="" loading="lazy"></figure>
+</div></section><section class="piece band"><div class="wrap grid">
+  <div class="txt"><h2>Let&rsquo;s Go</h2><p>Navy panel with a layered paper Earth, clouds, planets, astronauts and a rocket under hand-lettered type.</p></div>
+  <figure><img src="img/letsgo.jpg" width="1054" height="1400" alt="Let&#x27;s Go" class="" loading="lazy"></figure>
+</div></section><section class="piece plain"><div class="wrap grid flip">
+  <div class="txt"><h2>Back to School 2023</h2><p>Padded glossy-fabric characters on a starred black ground with textured 3D lettering and a painted grass border.</p></div>
+  <figure><img src="img/pooh.jpg" width="1097" height="977" alt="Back to School 2023" class="" loading="lazy"></figure>
+</div></section><section class="piece band"><div class="wrap grid">
+  <div class="txt"><h2>Character Train, 2023</h2><p>Free-standing cut-out train with a character in each carriage, built as a photo prop.</p></div>
+  <figure><img src="img/train.jpg" width="1280" height="830" alt="Character Train, 2023" class="" loading="lazy"></figure>
+</div></section></main><main class="page" id="p-childrensday" data-page="childrensday"><header class="hero" style="--hero:url('img/children.jpg')">
+  <div class="hero-in"><h1>Children&rsquo;s Day</h1><span class="bar"></span><p class="sub">1 installation</p></div>
+</header><section class="piece band"><div class="wrap grid">
+  <div class="txt"><h2>Happy Children&rsquo;s Day</h2><p>Layered painted figures, a mascot dog and tropical foliage under textured 3D foam lettering.</p></div>
+  <figure><img src="img/children.jpg" width="1218" height="1400" alt="Happy Children&#x27;s Day" class="" loading="lazy"></figure>
+</div></section></main><main class="page" id="p-christmas" data-page="christmas"><header class="hero" style="--hero:url('img/ny26balcony.jpg')">
+  <div class="hero-in"><h1>Christmas &amp; New Year</h1><span class="bar"></span><p class="sub">7 installations</p></div>
+</header><section class="piece band"><div class="wrap grid">
+  <div class="txt"><h2>Happy New Year 2026</h2><p>Facade installation with a red fabric panel, gold textured lettering, tartan trim, a foliage garland and star-decorated columns.</p></div>
+  <figure><img src="img/ny26balcony.jpg" width="1050" height="1400" alt="Happy New Year 2026" class="" loading="lazy"></figure>
+</div></section><section class="piece plain"><div class="wrap grid flip">
+  <div class="txt"><h2>New Year 2026 Corner Set</h2><p>Gold mirror-finish lettering on a red panel, an oversized Santa hat, a reindeer cut-out and an ornament tree.</p></div>
+  <figure><img src="img/ny26corner.jpg" width="1184" height="1400" alt="New Year 2026 Corner Set" class="" loading="lazy"></figure>
+</div></section><section class="piece band"><div class="wrap grid">
+  <div class="txt"><h2>New Year 2024 Countdown</h2><p>Balcony columns wrapped as a Santa suit, a giant clock face, a decorated tree, and gnome and reindeer standees.</p></div>
+  <figure><img src="img/clock.jpg" width="1050" height="1400" alt="New Year 2024 Countdown" class="" loading="lazy"></figure>
+</div></section><section class="piece plain"><div class="wrap grid flip">
+  <div class="txt"><h2>New Year 2025 Photo Frame</h2><p>Black frame with gold script, star ornaments, hand-painted storybook characters and standees.</p></div>
+  <figure><img src="img/ny25frame.jpg" width="1225" height="1400" alt="New Year 2025 Photo Frame" class="" loading="lazy"></figure>
+</div></section><section class="piece band"><div class="wrap grid">
+  <div class="txt"><h2>Happy New Year 2025</h2><p>Crinkled silver foil panel with red mirror-finish lettering and stars, beside foam snowman figures.</p></div>
+  <figure><img src="img/ny25foil.jpg" width="1400" height="1288" alt="Happy New Year 2025" class="" loading="lazy"></figure>
+</div></section><section class="piece plain"><div class="wrap grid flip">
+  <div class="txt"><h2>Sculpted Nutcracker</h2><p>Relief-sculpted, hand-painted figure with gilded detail and wrapped gift props.</p></div>
+  <figure><img src="img/nutcracker.jpg" width="1050" height="1400" alt="Sculpted Nutcracker" class="" loading="lazy"></figure>
+</div></section><section class="piece band"><div class="wrap grid">
+  <div class="txt"><h2>Christmas Village</h2><p>Stage-width red facades with snow-textured rooflines, framed character windows, wreaths and stockings.</p></div>
+  <figure><img src="img/village.jpg" width="1400" height="864" alt="Christmas Village" class="" loading="lazy"></figure>
+</div></section></main>
+
+<footer class="foot"><div class="wrap">
+  <div><b>Amany Ibrahim Khalifa</b><br>Art Teacher &amp; Art Supervisor</div>
+  <div>amanykhalifa085@gmail.com</div>
+  <div>01027113939<br>Alharam, Giza, Egypt</div>
+</div></footer>
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  var pages={}, links=[].slice.call(document.querySelectorAll('[data-go]'));
+  [].forEach.call(document.querySelectorAll('.page'),function(p){pages[p.dataset.page]=p});
+  var head=document.getElementById('head'), nav=document.getElementById('nav'), btn=document.getElementById('menu');
+  function show(t){
+    if(!pages[t]) t='home';
+    for(var k in pages) pages[k].classList.toggle('active',k===t);
+    links.forEach(function(a){a.classList.toggle('on',a.dataset.go===t)});
+    nav.classList.remove('open'); btn.setAttribute('aria-expanded','false');
+    window.scrollTo(0,0); onScroll();
+  }
+  function onScroll(){ head.classList.toggle('solid', window.scrollY>40 || nav.classList.contains('open')); }
+  links.forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();show(a.dataset.go)})});
+  btn.addEventListener('click',function(){
+    var o=nav.classList.toggle('open'); btn.setAttribute('aria-expanded',o?'true':'false'); onScroll();
+  });
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('hashchange',function(){show((location.hash||'').slice(1))});
+  show((location.hash||'').slice(1));
+})();
+</script>
+
+</body>
+</html>
